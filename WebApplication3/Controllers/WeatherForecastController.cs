@@ -1,3 +1,4 @@
+using ClassLibrary1;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication3.Controllers
@@ -21,6 +22,8 @@ namespace WebApplication3.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+            var class1 = new Class1();
+            class1.Executa();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
