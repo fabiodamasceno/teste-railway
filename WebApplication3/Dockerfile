@@ -8,6 +8,8 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["ClassLibrary1/ClassLibrary1.csproj", "ClassLibrary1/"]
+COPY ["ClassLibrary1/", "/app/publish/ClassLibrary1/"]
+
 COPY ["WebApplication3/WebApplication3.csproj", "WebApplication3/"]
 
 RUN dotnet restore "WebApplication3/WebApplication3.csproj"
